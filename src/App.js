@@ -8,6 +8,7 @@ function App() {
 
       {/* input field */}
       {/* button field  */}
+      {/* messages themselves */}
     </div>
   );
 }
