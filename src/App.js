@@ -46,9 +46,11 @@ function App() {
 
   return (
     <div className="App">
+      <img src="https://facebookbrand.com/wp-content/uploads/2019/10/Messenger_Logo_Color_RGB.png?w=100&h=100" alt="Messenger logo"/>
       <h1>I will get a job in this month</h1>
       <h2>Welcome {username}</h2>
-      <form>
+    
+      <form className="app__form">
         <FormControl>
           <InputLabel >Enter Message</InputLabel>
           <Input value={input} onChange={(event) => setInput(event.target.value)}/>
