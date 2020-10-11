@@ -9,8 +9,10 @@ import Message from './Message';
 
 function App() {
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useState(['a', 'b', 'c']);
-  const [usernmae, setUsername] = useState('');
+  const [messages, setMessages] = useState([
+    {username: 'Denys', text: "I got a job in this month"}, 
+    {username: "Graz", text: 'I use to love you'} ]);
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     setUsername(prompt('What is your name?'));
@@ -19,7 +21,9 @@ function App() {
   const sendMessege = (event) => {
     event.preventDefault();
     let inputMessage = input.trim();
-    setMessages([...messages, inputMessage]);
+    setMessages([
+      ...messages, {username: username, text: inputMessage}
+    ]);
     setInput('');
   }
 
@@ -27,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <h1>I will get a job in this month</h1>
-      <h2>Welcome {usernmae}</h2>
+      <h2>Welcome {username}</h2>
       <form>
         <FormControl>
           <InputLabel >Enter Message</InputLabel>
@@ -45,7 +49,7 @@ function App() {
       {/* messages themselves */}
 
       {messages.map(message => (
-        <Message text={message}/>
+        <Message text={message.text} username={message.username}/>
       ))}
     </div>
   );
