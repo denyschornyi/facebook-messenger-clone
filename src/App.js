@@ -5,9 +5,15 @@ function App() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState(['a', 'b', 'c']);
 
+  console.log(input);
+  console.log(messages);
+
   const sendMessege = () => {
-    setMessages([...messages, input]);
-    setInput('');
+    if(input.trim()){
+      let inputMessage = input.trim();
+      setMessages([...messages, inputMessage]);
+      setInput('');
+    }
   }
   return (
     <div className="App">
