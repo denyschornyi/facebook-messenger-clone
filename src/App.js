@@ -4,6 +4,8 @@ import firebase from 'firebase';
 import Button from '@material-ui/core/Button';
 import { FormControl, InputLabel, Input } from '@material-ui/core';
 
+import FlipMove from 'react-flip-move';
+
 import './App.css';
 
 import Message from './Message';
@@ -21,7 +23,7 @@ function App() {
     db.collection('messages')
     .orderBy('timestamp', 'desc')
     .onSnapshot((snapshot) => {
-      setMessages(snapshot.docs.map(doc => doc.data()))
+      setMessages(snapshot.docs.map(doc => ({id: doc.id, message: doc.data()})))
     });
   },[])
 
@@ -62,9 +64,11 @@ function App() {
 
       {/* messages themselves */}
 
-      {messages.map(message => (
-        <Message message={message} username={username}/>
-      ))}
+      <FlipMove>
+        {messages.map(({id, message}) => (
+          <Message key={id} message={message} username={username}/>
+        ))}
+      </FlipMove>
     </div>
   );
 }
