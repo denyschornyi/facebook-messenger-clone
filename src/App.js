@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import Button from '@material-ui/core/Button';
+
 import './App.css';
 
 function App() {
@@ -6,13 +8,12 @@ function App() {
   const [messages, setMessages] = useState(['a', 'b', 'c']);
 
 
+
   const sendMessege = (event) => {
     event.preventDefault();
-    if(input.trim()){
-      let inputMessage = input.trim();
-      setMessages([...messages, inputMessage]);
-      setInput('');
-    }
+    let inputMessage = input.trim();
+    setMessages([...messages, inputMessage]);
+    setInput('');
   }
   return (
     <div className="App">
@@ -20,7 +21,13 @@ function App() {
 
       <form>
         <input type="text" value={input} onChange={(event) => setInput(event.target.value)}/>
-        <button type="submit" onClick={(event) => sendMessege(event)}>Send Message</button>
+        <Button type="submit" 
+                variant="contained" 
+                color="primary"
+                disabled={!input}
+                onClick={(event) => sendMessege(event)}>
+                    Send Message
+        </Button>
       </form>
 
       {/* messages themselves */}
