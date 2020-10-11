@@ -6,13 +6,21 @@ import { FormControl, InputLabel, Input } from '@material-ui/core';
 import './App.css';
 
 import Message from './Message';
+import db from './firebase';
 
 function App() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
-    {username: 'Denys', text: "I got a job in this month"}, 
-    {username: "Graz", text: 'I use to love you'} ]);
+    {username: 'Denys', message: "I got a job in this month"}, 
+    {username: "Graz", message: 'I use to love you'} ]);
   const [username, setUsername] = useState('');
+  
+  useEffect(() => {
+    //run once when the app components loads
+    db.collection('messages').onSnapshot((snapshot) => {
+      setMessages(snapshot.docs.map(doc => doc.data))
+    });
+  },[])
 
   useEffect(() => {
     setUsername(prompt('What is your name?'));
