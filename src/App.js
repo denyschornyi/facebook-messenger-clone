@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import firebase from 'firebase';
 
-import Button from '@material-ui/core/Button';
-import { FormControl, InputLabel, Input } from '@material-ui/core';
+import { FormControl, InputLabel, Input, IconButton } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 
 import FlipMove from 'react-flip-move';
 
@@ -54,13 +54,14 @@ function App() {
         <FormControl>
           <InputLabel >Enter Message</InputLabel>
           <Input value={input} onChange={(event) => setInput(event.target.value)}/>
-          <Button type="submit" 
+
+          <IconButton type="submit" 
                 variant="contained" 
                 color="primary"
                 disabled={!input}
                 onClick={(event) => sendMessege(event)}>
-                    Send Message
-        </Button>
+            <SendIcon/>
+          </IconButton>
         </FormControl>
       </form>
 
