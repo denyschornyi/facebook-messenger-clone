@@ -15,7 +15,7 @@ function App() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([
     {username: 'Denys', message: "I got a job in this month"}, 
-    {username: "Graz", message: 'I use to love you'} ]);
+    {username: "Graz", message: 'Hey, what is up?'} ]);
   const [username, setUsername] = useState('');
   
   useEffect(() => {
@@ -51,14 +51,16 @@ function App() {
       <h2>Welcome {username}</h2>
     
       <form className="app__form">
-        <FormControl>
-          <InputLabel >Enter Message</InputLabel>
-          <Input value={input} onChange={(event) => setInput(event.target.value)}/>
-
+        <FormControl className="app__formControl">
+          <Input className="app_input"
+                  placeholder='Enter a message...' 
+                  value={input} 
+                  onChange={(event) => setInput(event.target.value)}/>
           <IconButton type="submit" 
                 variant="contained" 
                 color="primary"
                 disabled={!input}
+                className="app__iconButton"
                 onClick={(event) => sendMessege(event)}>
             <SendIcon/>
           </IconButton>
