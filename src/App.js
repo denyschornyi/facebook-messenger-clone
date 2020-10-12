@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import firebase from 'firebase';
 
-import { FormControl, InputLabel, Input, IconButton } from '@material-ui/core';
+import { FormControl, Input, IconButton } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 
 import FlipMove from 'react-flip-move';
