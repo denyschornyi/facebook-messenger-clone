@@ -1,4 +1,4 @@
-## Facebook Messenger Clone Based on React  <img src="https://cdn.iconscout.com/icon/free/png-512/facebook-messenger-2-569346.png">
+## Facebook Messenger Clone Based on React  <img src="https://cdn.iconscout.com/icon/free/png-256/facebook-messenger-2-569346.png">
 
 A messenger clone, a simple chat application with a global chat room. Users will be prompted to enter their name and all associated messages from the user will be linked to the user.
 
