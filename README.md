@@ -1,4 +1,4 @@
-## Facebook Messenger Clone
+## Facebook Messenger Clone Based on React  <img src="https://cdn.iconscout.com/icon/free/png-512/facebook-messenger-2-569346.png">
 
 A messenger clone, a simple chat application with a global chat room. Users will be prompted to enter their name and all associated messages from the user will be linked to the user.
 
@@ -6,16 +6,32 @@ A messenger clone, a simple chat application with a global chat room. Users will
 
 - [Live Site](https://react-clone-messenger.web.app/)
 
-![Desktop Demo](https://res.cloudinary.com/anthony-dev/image/upload/v1601834078/Screen_Shot_2020-10-04_at_1.52.55_PM_qd4wb2.png)
+![demo](https://media.giphy.com/media/h8xv465Nxi2uzJFx13/giphy.gif)
 
+## Technologies
 
-### MVP Libraries
+- [React](https://reactjs.org/)
+- [React-Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [React-Flip-Move](https://github.com/joshwcomeau/react-flip-move)
+- [Firebase Realtime Database](https://firebase.google.com/)
+- [Firebase Hosting](https://firebase.google.com/)
+- [Material UI](https://material-ui.com/)
+- [BEM](https://en.bem.info/methodology/)
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-|   React    | _The framework used to create all my components._ |
-|   Firebase   | _Used to handle the backend._ |
-|   Material UI   | _Used to help with styling._ |
-|   React Flip Move   | _Used to show animation when a new message is input._ |
+#### First, Install deps
 
-<br>
+```bash
+$ npm install
+#or
+$ yarn install
+```
+
+#### In the project directory, run the development server::
+
+```bash
+$ npm start
+#or
+$ yarn start
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
